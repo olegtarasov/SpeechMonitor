@@ -675,3 +675,4 @@ dmypy.json
 !vad/bin/wget.exe
 vad/options/
 vad/data/
+!VadnetSharp/VadnetSharp/opusenc.exe
