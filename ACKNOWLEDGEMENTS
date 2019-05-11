@@ -1,5 +1,6 @@
 ## This library depends on Vadnet project located at: https://github.com/hcmlab/vadnet.
-## This library includes complete unmodified snapshot of Vadnet source code at vad/ directory.
+## This library includes snapshot of Vadnet source code (without training data) at 
+##   SpeechMonitor/vadnet.zip. You can find complete source code at vadnet repository.
 ## Vadnet is used as a standalone executable, and this library communicates with it
 ##   using an UDP socket. Therefore, vadnet can be freely replaced with another library
 ##   communicating with the same protocol.

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechMonitor", "SpeechMonitor\SpeechMonitor.csproj", "{B94EFF1D-8166-45CD-993B-55B88EB56FDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{4F7DC56D-B9DB-4FB5-AF55-B3D3611E8B0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B94EFF1D-8166-45CD-993B-55B88EB56FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94EFF1D-8166-45CD-993B-55B88EB56FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94EFF1D-8166-45CD-993B-55B88EB56FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94EFF1D-8166-45CD-993B-55B88EB56FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F7DC56D-B9DB-4FB5-AF55-B3D3611E8B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F7DC56D-B9DB-4FB5-AF55-B3D3611E8B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F7DC56D-B9DB-4FB5-AF55-B3D3611E8B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F7DC56D-B9DB-4FB5-AF55-B3D3611E8B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B2C973D-CEE8-49CF-8CD7-DBFDB8D070AF}
+	EndGlobalSection
+EndGlobal
