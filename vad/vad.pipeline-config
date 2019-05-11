@@ -4,7 +4,7 @@ audio:live:mic = true 							 		# $(bool) if live input is selected use micropho
 model:path=models\vad									# path to model folder
 
 send:do = false											# $(bool) send xml string
-send:url = udp://localhost:12354						# socket address in format <protocol://host:port>
+send:url = upd://localhost:1234							# socket address in format <protocol://host:port>
 
 record:do = false										# $(bool) capture screen and audio
 record:path = capture									# capture path

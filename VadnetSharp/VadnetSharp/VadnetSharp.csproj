@@ -9,16 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="opusenc.exe" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="opusenc.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="NAudio" Version="1.9.0" />
   </ItemGroup>
 
