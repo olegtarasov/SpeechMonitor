@@ -4,6 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>VadnetSharp.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="opusenc.exe" />
   </ItemGroup>
@@ -15,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Concentus.Oggfile" Version="1.0.4" />
     <PackageReference Include="NAudio" Version="1.9.0" />
   </ItemGroup>
 

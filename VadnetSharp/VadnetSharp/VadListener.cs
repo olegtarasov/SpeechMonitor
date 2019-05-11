@@ -21,7 +21,7 @@ namespace VadnetSharp
         public event EventHandler SpeechStarted;
         public event EventHandler<SpeechEndedEventArgs> SpeechEnded;
 
-        public VadListener(float speechThreshold = 0.75f)
+        public VadListener(float speechThreshold = 0.85f)
         {
             _speechThreshold = speechThreshold;
             _client = new UdpClient(12354);

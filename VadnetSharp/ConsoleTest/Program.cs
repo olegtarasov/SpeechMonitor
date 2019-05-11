@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading;
+using NAudio.Wave;
 using VadnetSharp;
 
 namespace ConsoleTest
@@ -12,21 +14,18 @@ namespace ConsoleTest
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            var cloud = new YandexCloud();
             var listener = new VadListener();
             var monitor = new AudioMonitor();
-
-            cloud.RefreshToken("");
 
             listener.SpeechStarted += (sender, eventArgs) =>
                 Console.WriteLine("Speech started");
             listener.SpeechEnded += (sender, e) =>
             {
                 Console.WriteLine($"Speech ended. Duration: {e.Span}");
-                var ogg = monitor.GetOpusTimeframe(e.EndTime, e.Span);
-                Console.WriteLine(cloud.RecognizeText(ogg));
-                //File.WriteAllBytes("capture.ogg", ogg);
-                //monitor.WriteTimeframeToFile("capture.wav", e.EndTime, e.Span);
+                var data = monitor.GetTimeframe(e.EndTime, e.Span);
+                Console.WriteLine("Playing back...");
+                PlayPCM(data, monitor.WaveFormat);
+                Console.WriteLine("Playback finished.");
             };
 
             monitor.BeginRecording();
@@ -35,17 +34,20 @@ namespace ConsoleTest
             Console.ReadKey();
         }
 
-        private static void TestList()
+        private static void PlayPCM(byte[] data, WaveFormat format)
         {
-            var list = new LinkedList<int>();
+            var evt = new ManualResetEventSlim();
+            var waveOut = new WaveOutEvent();
+            var provider = new RawSourceWaveStream(data, 0, data.Length, format);
 
-            list.AddLast(1);
-            list.AddLast(2);
-            list.AddLast(3);
-            list.AddLast(4);
+            waveOut.PlaybackStopped += (sender, args) => evt.Set();
+            waveOut.Init(provider);
+            waveOut.Play();
 
-            var first = list.First;
-            list.RemoveFirst();
+            evt.Wait();
+
+            provider.Dispose();
+            waveOut.Dispose();
         }
     }
 }
